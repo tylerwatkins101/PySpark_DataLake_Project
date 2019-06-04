@@ -58,7 +58,7 @@ AWS S3 is a solid option for cloud storage and serves as the data lake for proje
 - etl.py (script that reads in data, performs wrangling, runs tests, and outputs data model tables - need to use your AWS credentials to use.)
 - etl_local.py (local version of etl.py)
 - support.py (script contains dictionaries for helping with data wrangling)
-- dl.cfg (AWS permissions configuration data for S3 - need to add your own AWS credentials to use)
+- dl-template.cfg (AWS permissions configuration data for S3 - need to add your own AWS credentials to use)
 - Data Dictionary.txt (Description of columns in each table of the data model)
 
 ## Data
