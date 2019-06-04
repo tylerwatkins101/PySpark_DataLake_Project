@@ -12,7 +12,7 @@ The scope of the project was to build an ETL pipeline that processed multiple da
 3. Clean both datasets using Pyspark data wrangling functions.
 4. Transform the 2 datasets into a usable data model consisting of a 3 table star schema format. (admissions_table, location_table, time_table).
 5. Use integrity tests on the final tables to ensure primary key uniqueness.
-6. Write the three tables back to AWS S3 in csv format to be available for an analytics team to use.
+6. Write the three tables back to AWS S3 in parquet format to be available for an analytics team to easily access and use.
 
 ## Data Model
 
@@ -64,8 +64,6 @@ AWS S3 is a solid option for cloud storage and serves as the data lake for proje
 ## Data
 - sas_data/ (immigration event data in parquet form)
 - us-cities-demographics.csv (us city demographic input data)
-
-
 
 ## How to Interact with the Project
 
