@@ -18,9 +18,31 @@ The scope of the project was to build an ETL pipeline that processed multiple da
 
 The data model follow a star schema. It consists of 3 tables.
 
-- Fact Table: admissions_table with columns PK (Admission_id), SK (Location_id), SK (Date), Age, Gender, Visa_type
-- Dimension Table: location_table with columns PK (Location id), City, State, Median_age, Total_population, Foreign_born, Foreign_ratio
-- Dimension Table: time_table with columns PK (Date), Year, Month, Day
+### Admissions table
+
+- Location_id: string - Secondary key. Location of arrival port in the US.
+- Gender: string - Gender of arriving person. M, F or NaN.
+- Visa_type: string - types of arrival visas including: 'WT', 'B2', 'CP', 'B1', 'GMT', 'WB', 'F1', 'E2', 'F2', 'M1'.
+- Date: timestamp - Secondary key. Date of arrival to the US.
+- Admission_id: integer - Primary key. Unique number for each immigrant arrival.
+- Age: integer - Age of arriving person.
+
+### Location table
+
+- City: string - US city name of location.
+- State: string - US state name of location.
+- Median_age: double - Median age of persons living in location.
+- Total_population: long - Total population of location.
+- Foreign_born: double - Total number of foreign born population in location.
+- Foreign_ratio: double - Proportion of foreign born population in location.
+- Location_id: string - Primary key. Location within the US.
+
+### Time table
+
+- Date: timestamp - Primary key. Date.
+- day: integer - Day of date.
+- month: integer - Month of date.
+- year: integer - Year of date.
 
 I chose this data model so that aggregate analysis could easily be done on immigrant arrivals at the city and state level as well as doing analysis of arrivals over time.
 
