@@ -1,4 +1,4 @@
-# PySpark_DataLake_Project
+# PySpark DataLake Project
 
 ## Project Scope
 
