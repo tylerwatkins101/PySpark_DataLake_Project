@@ -55,10 +55,10 @@ AWS S3 is a solid option for cloud storage and serves as the data lake for proje
 
 ## Project Files
 
-- etl.py (script that reads in data, performs wrangling, runs tests, and outputs data model tables)
+- etl.py (script that reads in data, performs wrangling, runs tests, and outputs data model tables - need to use your AWS credentials to use.)
 - etl_local.py (local version of etl.py)
 - support.py (script contains dictionaries for helping with data wrangling)
-- dl.cfg (AWS permissions configuration data for S3)
+- dl.cfg (AWS permissions configuration data for S3 - need to add your own AWS credentials to use)
 - Data Dictionary.txt (Description of columns in each table of the data model)
 
 ## Data
@@ -74,7 +74,18 @@ AWS S3 is a solid option for cloud storage and serves as the data lake for proje
 - pandas
 
 ### Instructions
-- download the project files and run etl_local.py from the command line 
+
+Option 1 (quick option):
+
+Download the project files and run etl_local.py from the command line to see how it works.
+
+Option 2:
+
+1. Download the project files
+2. Add your AWS credentials to dl.cfg
+3. add the data files to your AWS S3 bucket
+4. Run etl.py from the command line
+
 
 ## Extensions - How Would the Project Change Under the Following Scenarios
 
