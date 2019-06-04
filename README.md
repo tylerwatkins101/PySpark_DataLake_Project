@@ -10,7 +10,7 @@ The scope of the project was to build an ETL pipeline that processed multiple da
 1. Read in over 3 million rows of US immigration arrivals data from AWS S3 in parquet format to Pyspark.
 2. Read in US city demographic data in csv format to Pyspark.
 3. Clean both datasets using Pyspark data wrangling functions.
-4. Transform the 2 datasets into a usable data model consisting of a 3 table star schema format. (immigration_table, cities_table, time_table).
+4. Transform the 2 datasets into a usable data model consisting of a 3 table star schema format. (admissions_table, location_table, time_table).
 5. Use integrity tests on the final tables to ensure primary key uniqueness.
 6. Write the three tables back to AWS S3 in csv format to be available for an analytics team to use.
 
@@ -18,8 +18,8 @@ The scope of the project was to build an ETL pipeline that processed multiple da
 
 The data model follow a star schema. It consists of 3 tables.
 
-- Fact Table: immigration_table with columns PK (Admission_id), SK (Location_id), SK (Date), Age, Gender, Visa_type
-- Dimension Table: cities_table with columns PK (Location id), City, State, Median_age, Total_population, Foreign_born, Foreign_ratio
+- Fact Table: admissions_table with columns PK (Admission_id), SK (Location_id), SK (Date), Age, Gender, Visa_type
+- Dimension Table: location_table with columns PK (Location id), City, State, Median_age, Total_population, Foreign_born, Foreign_ratio
 - Dimension Table: time_table with columns PK (Date), Year, Month, Day
 
 I chose this data model so that aggregate analysis could easily be done on immigrant arrivals at the city and state level as well as doing analysis of arrivals over time.
